@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="60.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <ImageView fitHeight="31.0" fitWidth="35.0" layoutX="6.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/ben-affleck.png" />
+         </image>
+      </ImageView>
+      <CheckBox layoutX="227.0" layoutY="22.0" mnemonicParsing="false" text="Present" />
+      <Label fx:id="nameLB" layoutX="57.0" layoutY="14.0" text="Jamal Hossain" />
+      <Label layoutX="59.0" layoutY="31.0" text="Present : 10%" />
+      <Button layoutX="524.0" layoutY="19.0" mnemonicParsing="false" text="Update" />
+   </children>
+</AnchorPane>
