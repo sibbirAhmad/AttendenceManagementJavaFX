@@ -11,7 +11,7 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <Button fx:id="updateBTN" layoutX="535.0" layoutY="21.0" mnemonicParsing="false" onAction="#update" prefWidth="55.0" text="Update" />
+      <Button  fx:id="updateBTN" layoutX="535.0" layoutY="21.0" mnemonicParsing="false" onAction="#update" prefWidth="55.0" text="Update" />
       <ImageView fitHeight="55.0" fitWidth="65.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/ic_usr.png" />

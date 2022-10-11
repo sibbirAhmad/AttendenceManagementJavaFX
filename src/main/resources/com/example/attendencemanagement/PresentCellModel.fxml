@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="56.0" prefWidth="600.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attendencemanagement.PresentCellController">
+   <children>
+      <Label fx:id="dateLB" layoutX="22.0" layoutY="20.0" text="10 JAN 2022" textFill="WHITE" />
+      <CheckBox fx:id="presentCB" layoutX="254.0" layoutY="16.0" mnemonicParsing="false" text="Present" textFill="WHITE" />
+      <Button layoutX="506.0" layoutY="16.0" mnemonicParsing="false" onAction="#update" text="Update" />
+   </children>
+</Pane>

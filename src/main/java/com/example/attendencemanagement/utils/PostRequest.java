@@ -11,12 +11,17 @@ import java.util.ArrayList;
 public class PostRequest extends Task<Void> {
     String serverUrl ;
     PostRequestListener listener;
+    String jsonData ;
     public PostRequest(String url,String jsonAsString,PostRequestListener listener){
 
         getTestData();
+        this.jsonData = jsonAsString;
         this.listener = listener;
-        this.serverUrl = "https://script.google.com/macros/s/AKfycbwY0-qh_toxaFUQuJ3TmEsfGT2sXBbXutlucc8xQY4zW4hu0rXPCgtxr_SbSPPpcE2DCA/exec";
-       Thread thread = new Thread(this,"Post Request");
+        this.serverUrl =
+        "https://script.google.com/macros/s/AKfycbyIWqm7R9LOiCjQwFv70Gi5wSTNK3uSclSfuWpP9rzIfX7KFjG1DIlpZUCtadZnaEH0sA/exec"
+        ;
+
+        Thread thread = new Thread(this,"Post Request");
        thread.setDaemon(true);
        thread.start();
     }
@@ -42,8 +47,9 @@ public class PostRequest extends Task<Void> {
             //Todo : Writing post request json data
             OutputStream outputStream = con.getOutputStream();
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream));
-            bufferedWriter.write(getTestData());
+            bufferedWriter.write(jsonData);
             bufferedWriter.flush();
+            System.out.println("Requested json : "+jsonData);
             //---------- todo : Now Read
             int statusCode = con.getResponseCode();
             System.out.println("Request Status Code : "+statusCode);

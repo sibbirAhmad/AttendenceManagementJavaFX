@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.ProgressIndicator?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="620.0" style="-fx-background-color: #131022;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attendencemanagement.Home">
+<AnchorPane prefHeight="500.0" prefWidth="620.0" style="-fx-background-color: #131022;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attendencemanagement.Home">
    <children>
       <Pane prefHeight="87.0" prefWidth="620.0" style="-fx-background-color: #131022; -fx-background-radius: 5;">
          <children>
             <Pane layoutX="1.0" prefHeight="50.0" prefWidth="613.0">
                <children>
                   <ComboBox fx:id="departmentCM" layoutX="14.0" layoutY="13.0" prefHeight="27.0" prefWidth="108.0" promptText="Department" styleClass="combo-box" stylesheets="@../css/fullpackstyling.css" />
-                  <ComboBox layoutX="129.0" layoutY="13.0" prefHeight="27.0" prefWidth="88.0" promptText="Session" styleClass="combo-box" stylesheets="@../css/fullpackstyling.css" />
-                  <ComboBox layoutX="225.0" layoutY="13.0" prefHeight="27.0" prefWidth="75.0" promptText="Batch" styleClass="combo-box" stylesheets="@../css/fullpackstyling.css" />
-                  <ComboBox layoutX="308.0" layoutY="12.0" prefHeight="27.0" prefWidth="88.0" promptText="Subject" styleClass="combo-box" stylesheets="@../css/fullpackstyling.css" />
-                  <DatePicker layoutX="400.0" layoutY="13.0" prefHeight="25.0" prefWidth="108.0" promptText="Select Date" />
-                  <Button layoutX="518.0" layoutY="13.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Check" />
+                  <ComboBox fx:id="sessionCM" layoutX="129.0" layoutY="13.0" prefHeight="27.0" prefWidth="88.0" promptText="Session" styleClass="combo-box" stylesheets="@../css/fullpackstyling.css" />
+                  <ComboBox fx:id="batchCM" layoutX="225.0" layoutY="13.0" prefHeight="27.0" prefWidth="75.0" promptText="Batch" styleClass="combo-box" stylesheets="@../css/fullpackstyling.css" />
+                  <ComboBox fx:id="subjectCM" layoutX="308.0" layoutY="12.0" prefHeight="27.0" prefWidth="88.0" promptText="Subject" styleClass="combo-box" stylesheets="@../css/fullpackstyling.css" />
+                  <DatePicker fx:id="datePicker" layoutX="400.0" layoutY="13.0" prefHeight="25.0" prefWidth="108.0" promptText="Select Date" />
+                  <Button layoutX="518.0" layoutY="13.0" mnemonicParsing="false" onAction="#check" prefHeight="25.0" prefWidth="88.0" text="Check" />
                </children></Pane>
+            <Label fx:id="totalPresentLB" layoutX="34.0" layoutY="50.0" text="Present : 20" textFill="WHITE" />
+            <Label fx:id="totalAbsentLB" layoutX="123.0" layoutY="50.0" text="Absent : 40" textFill="WHITE" />
          </children></Pane>
       <Pane layoutY="87.0" prefHeight="412.0" prefWidth="570.0">
          <children>

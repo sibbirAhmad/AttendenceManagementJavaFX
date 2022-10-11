@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attendencemanagement.TestController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attendencemanagement.TestController">
    <children>
       <BorderPane fx:id="borderPane" prefHeight="500.0" prefWidth="845.0">
          <left>
@@ -33,7 +28,7 @@
                            <padding>
                               <Insets left="40.0" />
                            </padding></Button>
-                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../css/fullpackstyling.css" text="Live Attendence" textFill="WHITE">
+                        <Button fx:id="liveAttendance" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#liveAttendance" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../css/fullpackstyling.css" text="Live Attendence" textFill="WHITE">
                            <graphic>
                               <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -73,7 +68,7 @@
                   </VBox>
                   <Pane layoutY="26.0" prefHeight="61.0" prefWidth="224.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 5;">
                      <children>
-                        <Label layoutX="25.0" layoutY="17.0" text="Home" textFill="WHITE">
+                        <Label fx:id="topHomTitle" layoutX="25.0" layoutY="17.0" text="Home" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
