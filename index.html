@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Present</title>
+</head>
+
+<body>
+    <h1>City University</h1>
+   
+    <form>
+        <b></b>
+        <select id="department">
+            <option>CSE</option>
+            <option> BBA </option>
+            <option> LAW </option>
+
+        </select>
+        <select id="session">
+            <option>Spring22</option>
+            <option> Fall22 </option>
+        </select>
+        <select id="batch">
+            <option>49A</option>
+            <option> 49B </option>
+        </select>
+        <select style="margin-top: 5px;" id="subject" >
+            <option>MAT101</option>
+            <option> MAT102 </option>
+        </select>
+        <p>Student ID:
+        <input value="173462148" style="margin-top:5px; width: 180px;" type="text" placeholder="Student ID" id="id" size="20">
+    </p>
+        <input style="width: 130px; margin-top: 5px;" type="submit" value="Present Today" onclick="savePresent(event)">
+        <input style="width: 130px; margin-top: 5px;" type="submit" value="Check Present" onclick="check(event)">
+    </form>
+    <p id="p"></p>
+    
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // const url = "https://httpbin.org/post";
+        const url = "https://script.google.com/macros/s/AKfycbymxi6suZv0zOLw0ZC0QWBV6KdGjTZR9OMsYa4YyfUkSR91tdRyYcRj0BkLZefkjD7e_w/exec";
+        function getSelectorValue(id){
+            var e = document.getElementById(id);
+            var value = e.value;
+            var text = e.options[e.selectedIndex].text;
+            return text;
+        }
+        function check(event){
+            event.preventDefault(); 
+            var department = getSelectorValue("department");
+            var session = getSelectorValue("session");
+            var batch= getSelectorValue("batch");
+            var subject = getSelectorValue("subject");
+            var id = document.getElementById('id').value;
+            var formattedSubject = department.toUpperCase()+"_"+session.toUpperCase()+"_"+batch.toUpperCase()+"_"+subject.toUpperCase();
+            var j = {"requestFrom":"student",
+            "request":"getAllPresent",
+            "subjectName":formattedSubject,
+            "date":"p20221012",
+            "studentId" : id};
+            postRequestApi(url,j);
+        }
+        function savePresent(event){
+            event.preventDefault(); 
+            var department = getSelectorValue("department");
+            var session = getSelectorValue("session");
+            var batch= getSelectorValue("batch");
+            var subject = getSelectorValue("subject");
+            var id = document.getElementById('id').value;
+            var formattedSubject = department.toUpperCase()+"_"+session.toUpperCase()+"_"+batch.toUpperCase()+"_"+subject.toUpperCase();
+            var j = {"requestFrom":"student",
+            "request":"updateSinglePresent",
+            "subjectName":formattedSubject,
+            "studentId" : id};
+            //alert("You have selected : "+formattedSubject);
+            console.log("Request Data <br> : "+id);
+            postRequestApiSave(url,json);
+        }
+        const json = {
+            "requestFrom": "student",
+            "request": "updateSinglePresent",
+            "subjectName": "CSE_SPRING22_49A_MAT101",
+            "studentId": "173462148"
+        };
+        const checkPresent = {
+            "requestFrom": "teacher",
+            "request": "getAllPresent",
+            "subjectName": "CSE_SPRING22_49A_MAT101",
+            "date": "p20221012"
+        };
+       
+        function postRequestApiSave(url, json) {
+            Swal.fire('Processing...');
+            swal.showLoading();
+
+            fetch(url,
+                {
+                    method: "POST",
+                    body: JSON.stringify(json)
+                })
+                .then(function (res) { return res.json(); })
+                .then(function (data) {
+                    var d = JSON.stringify(data);
+                    const obj = JSON.parse(d);
+                    let responseCode = obj.responseCode;
+                    let responseMessage = obj.responseMessage;
+                    
+                    //console.log(obj.data);
+                    document.getElementById('p').innerHTML = responseMessage ;
+                    if(responseCode==200){
+                    Swal.update({
+                        icon: 'success',
+                        title: "Present Done!",
+                        text: "Thank you",
+                    });
+                }else{
+                    Swal.update({
+                        icon: 'error',
+                        title: responseMessage,
+                        text: "Be honest",
+                    });
+                }
+                    Swal.hideLoading();
+
+                    //alert("Your Data" + JSON.stringify(data))
+                })
+        }
+
+        function postRequestApi(url, json) {
+            Swal.fire('Processing...');
+            swal.showLoading();
+
+            fetch(url,
+                {
+                    method: "POST",
+                    body: JSON.stringify(json)
+                })
+                .then(function (res) { return res.json(); })
+                .then(function (data) {
+                    var d = JSON.stringify(data);
+                    const obj = JSON.parse(d);
+                    let responseCode = obj.responseCode;
+                    let responseMessage = obj.responseMessage;
+                    var result = "";
+                    if(responseCode==200){
+                      result =  dataProcess(obj.data,document.getElementById('id').value);
+                    }else{
+                        result = "Failed";
+                    }
+                    
+                    //console.log(obj.data);
+                    document.getElementById('p').innerHTML =result;
+                    if(responseCode==200){
+                    Swal.close();
+                }else{
+                    Swal.update({
+                        icon: 'error',
+                        title: responseMessage,
+                        text: "Be honest",
+                    });
+                }
+                    Swal.hideLoading();
+
+                    //alert("Your Data" + JSON.stringify(data))
+                })
+        }
+
+        function dataProcess(myJSON,studentId) {
+            const myObj = JSON.parse(myJSON);
+            let text = "";
+            for (let i in myObj) {
+                let id = myObj[i].id;
+                if (id == studentId) {
+                    const mjson = JSON.parse(JSON.stringify(myObj[i]));
+                    var array = Object.keys(mjson);
+                    var values = Object.values(mjson);
+                    let totalPresent = 0;
+                    let totalAbsent = 0;
+                    for (let i in array) {
+                        var date = array[i];
+                        if (date.includes('p')) {
+                            var d = date;
+                            var d1 = d.substring(1, 5);
+                            var d2 = d.substring(5, 7);
+                            var d3 = d.substring(7, 9);
+                            var str = d1 + "-" + d2 + "-" + d3;
+                            let p = values[i] == 1 ? 'Present' : 'Absent';
+                            if (values[i] == 1) {
+                                totalPresent++;
+                            } else {
+                                totalAbsent++;
+                            }
+                            text += str + "  -------  " + p + "<br>";
+                            //console.log(str);
+                        }
+
+                    }
+                    text += "<br>Total Present : " + totalPresent + "<br>Total Absent : " + totalAbsent;
+                    console.log(text)
+                }
+                //   text += myObj[i].id + ", ";
+            }
+            return text;
+        }
+    </script>
+</body>
+
+</html>
