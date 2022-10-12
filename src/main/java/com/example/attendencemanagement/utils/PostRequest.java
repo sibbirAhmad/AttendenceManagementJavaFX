@@ -14,8 +14,8 @@ public class PostRequest extends Task<Void> {
         this.jsonData = jsonAsString;
         this.listener = listener;
         this.serverUrl =
-        "https://script.google.com/macros/s/AKfycbzc8_MUgkWsbqHvhMCAnVkxpky-mJvrYU1Jb2vHOol4PZapYU-2xdOyUyFR3dS1tlwIpw/exec"
-        ;
+                "https://script.google.com/macros/s/AKfycbymxi6suZv0zOLw0ZC0QWBV6KdGjTZR9OMsYa4YyfUkSR91tdRyYcRj0BkLZefkjD7e_w/exec";
+
 
         Thread thread = new Thread(this,"Post Request");
        thread.setDaemon(true);
