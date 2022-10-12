@@ -1,6 +1,6 @@
 # AttendenceManagementJavaFX
-Attendance Management with Google Sheet, Web App and Java FX
+Attendance Management with Google Sheet, Web App and Java FX<br>
 #Student url : https://sibbirahmad.github.io/attendance.html
 
-#Resource 
-[Iconns] https://www.flaticon.com
+#Resource<br> 
+[Icons] https://www.flaticon.com
