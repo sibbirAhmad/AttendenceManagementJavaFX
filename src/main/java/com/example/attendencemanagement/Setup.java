@@ -11,7 +11,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
-import java.security.SecureRandom;
 import java.util.ResourceBundle;
 
 public class Setup implements Initializable {
@@ -85,6 +84,6 @@ public class Setup implements Initializable {
     }
 
     public void backToHome(ActionEvent actionEvent) {
-        TestController.getInstance().home(null);
+        MenuController.getInstance().home(null);
     }
 }

@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attendencemanagement.TestController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attendencemanagement.MenuController">
    <children>
       <BorderPane fx:id="borderPane" prefHeight="500.0" prefWidth="845.0">
          <left>
@@ -18,7 +23,7 @@
                            <graphic>
                               <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../resources/ben-affleck.png" />
+                                    <Image url="@../resources/home.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -32,7 +37,7 @@
                            <graphic>
                               <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../resources/ic_usr.png" />
+                                    <Image url="@../resources/live-present.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -44,7 +49,7 @@
                            <graphic>
                               <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../resources/profile-adam-levine.png" />
+                                    <Image url="@../resources/teacher.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -52,11 +57,11 @@
                               <Insets left="40.0" />
                            </padding>
                         </Button>
-                        <Button onAction="#setupPage" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../css/fullpackstyling.css" text="Setup" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#setupPage" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../css/fullpackstyling.css" text="Setup" textFill="WHITE">
                            <graphic>
                               <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../resources/profile-james-marsden.png" />
+                                    <Image url="@../resources/setup-icon.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -73,6 +78,11 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
+                        <ImageView fx:id="exitIV" fitHeight="31.0" fitWidth="35.0" layoutX="170.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/exit-app.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                </children></AnchorPane>

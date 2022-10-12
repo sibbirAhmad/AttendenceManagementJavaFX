@@ -14,7 +14,7 @@
       <Button  fx:id="updateBTN" layoutX="535.0" layoutY="21.0" mnemonicParsing="false" onAction="#update" prefWidth="55.0" text="Update" />
       <ImageView fitHeight="55.0" fitWidth="65.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../resources/ic_usr.png" />
+            <Image url="@../resources/ic-user.png" />
          </image>
       </ImageView>
       <Label fx:id="idLB" layoutX="90.0" layoutY="24.0" prefHeight="13.0" prefWidth="151.0" text="173462148" textFill="WHITE" />

@@ -72,7 +72,7 @@ public class StudentProfile implements Initializable {
     }
 
     public void backToHome(ActionEvent actionEvent) {
-        TestController.getInstance().home(null);
+        MenuController.getInstance().home(null);
     }
 
 }

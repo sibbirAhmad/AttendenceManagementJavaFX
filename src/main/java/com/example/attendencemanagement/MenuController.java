@@ -1,6 +1,7 @@
 package com.example.attendencemanagement;
 
 import com.example.attendencemanagement.utils.DataSingleton;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
@@ -16,18 +18,19 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class TestController implements Initializable {
+public class MenuController implements Initializable {
     @FXML
     public ListView listView;
     public Button liveAttendance;
     public Label topHomTitle;
+    public ImageView exitIV;
     @FXML
     BorderPane borderPane;
     ArrayList<String> arrayList;
-    static TestController testController;
+    static MenuController menuController;
     DataSingleton data = DataSingleton.getInstance();
-    public static TestController getInstance(){
-        return testController;
+    public static MenuController getInstance(){
+        return menuController;
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -36,12 +39,17 @@ public class TestController implements Initializable {
         arrayList.add("Kamal");
         arrayList.add("Jamal");
         arrayList.add("Namal");
-        testController = this;
+        menuController = this;
+        exitIV.setOnMouseClicked(mouseEvent -> {
+            System.out.println("Exit App");
+            Platform.exit();
+            System.exit(0);
+        });
 //        ObservableList<String> observableList = FXCollections.observableArrayList();
 //        observableList.addAll(arrayList);
 //       listView.setCellFactory(s->new PresentAdapter());
 
-       // home(null);
+       home(null);
     }
 
     public void benAffleck(ActionEvent actionEvent) {

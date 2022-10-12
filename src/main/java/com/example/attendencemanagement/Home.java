@@ -9,11 +9,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
@@ -211,7 +209,7 @@ public class Home implements Initializable {
                 System.out.println("Opening student profile : "+p);
                 Platform.runLater(()->{
                     data.setStudent(student);
-                    TestController.getInstance().loadStudentProfile();
+                    MenuController.getInstance().loadStudentProfile();
                 });
             });
 

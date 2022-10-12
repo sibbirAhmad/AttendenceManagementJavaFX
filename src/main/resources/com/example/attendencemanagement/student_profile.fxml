@@ -18,7 +18,7 @@
          <children>
             <ImageView fitHeight="64.0" fitWidth="68.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../resources/ben-affleck.png" />
+                  <Image url="@../resources/ic-user.png" />
                </image>
             </ImageView>
             <Button layoutX="529.0" mnemonicParsing="false" onAction="#backToHome" text="Back To Home" />

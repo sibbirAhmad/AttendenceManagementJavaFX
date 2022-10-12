@@ -49,18 +49,19 @@ public class LiveAttendance implements Initializable {
     }
 
     public void backToHome(ActionEvent actionEvent) {
-        TestController.getInstance().home(null);
+        MenuController.getInstance().home(null);
     }
     long durationInMillis = 0;
     String formattedSubjectName;
     String selectedDate;
+    int duration;
     public void startTimer(ActionEvent actionEvent) {
         String department = departmentCM.getValue().toString().toUpperCase().replace(" ","");
         String session = sessionCM.getValue().toString().toUpperCase().replace(" ","");
         String year = yearCM.getValue().toString().toUpperCase().replace("-","");
         String batch = batchLB.getText().toUpperCase().replace(" ","");
         String subjectCode = subjectCodeLB.getText().toUpperCase().replace(" ","");
-        int duration = Integer.parseInt(durationTF.getText());
+        duration = Integer.parseInt(durationTF.getText());
         String date = datePicker.getValue().toString().replace("-","");
         selectedDate = "p"+date;
         formattedSubjectName = department+"_"+session+year+"_"+batch+"_"+subjectCode;
@@ -77,7 +78,7 @@ public class LiveAttendance implements Initializable {
             public void onSuccess(String response) {
                 Platform.runLater(()->{
                     progressbar.setVisible(false);
-                    durationInMillis = System.currentTimeMillis()+(duration+(60*1000));
+                    durationInMillis = System.currentTimeMillis()+(duration*(1000*60));
                     myTimerMethod();//Todo : Start Timer
                     Alert alert = new Alert(Alert.AlertType.INFORMATION,"Successfully timer started",ButtonType.OK);
                     alert.showAndWait();
