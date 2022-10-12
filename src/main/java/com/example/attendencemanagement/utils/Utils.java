@@ -4,10 +4,14 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class Utils {
 
+    public static String ConvertSecondToHHMMSSString(int nSecondTime) {
+        return LocalTime.MIN.plusSeconds(nSecondTime).toString();
+    }
     public static void saveAsText(String fileName,String text){
         try (PrintWriter out = new PrintWriter(fileName)) {
             out.println(text);

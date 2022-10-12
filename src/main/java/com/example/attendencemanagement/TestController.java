@@ -85,9 +85,8 @@ public class TestController implements Initializable {
     }
     public void liveAttendance(ActionEvent actionEvent) {
         Parent parent = null;
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DashFX.fxml"));
         try {
-            parent = FXMLLoader.load(getClass().getResource("testFx.fxml"));
+            parent = FXMLLoader.load(getClass().getResource("live_attendance.fxml"));
             System.out.println("Process");
         } catch (IOException e) {
             System.out.println("Can not parse " +e);
@@ -95,5 +94,9 @@ public class TestController implements Initializable {
         }
         borderPane.setCenter(parent);
         topHomTitle.setText("Live Attendance");
+    }
+
+    public void setupPage(ActionEvent actionEvent) {
+        loadView("setup.fxml","Setup");
     }
 }

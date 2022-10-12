@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="620.0" style="-fx-background-color: #131022" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attendencemanagement.LiveAttendance">
+    <children>
+        <Pane layoutY="7.0" prefHeight="140.0" prefWidth="620.0">
+            <children>
+                <TextField fx:id="batchLB" layoutX="286.0" layoutY="58.0" prefHeight="25.0" prefWidth="75.0" promptText="Batch" />
+                <TextField fx:id="subjectCodeLB" layoutX="368.0" layoutY="58.0" prefHeight="25.0" prefWidth="96.0" promptText="Subject Code" />
+                <ComboBox fx:id="departmentCM" layoutX="7.0" layoutY="57.0" prefHeight="25.0" prefWidth="106.0" promptText="Department" />
+                <ComboBox fx:id="sessionCM" layoutX="119.0" layoutY="57.0" prefHeight="25.0" prefWidth="86.0" promptText="Session" />
+                <ComboBox fx:id="yearCM" layoutX="212.0" layoutY="58.0" prefHeight="25.0" prefWidth="67.0" promptText="Year" />
+                <Label layoutX="14.0" layoutY="15.0" prefHeight="25.0" prefWidth="132.0" text="Live Attendance" textFill="#ebe7e7">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Button layoutX="510.0" layoutY="15.0" mnemonicParsing="false" onAction="#backToHome" prefHeight="25.0" prefWidth="96.0" text="Bask to home" />
+            <TextField fx:id="durationTF" layoutX="7.0" layoutY="90.0" prefHeight="25.0" prefWidth="106.0" promptText="Duration(min)" />
+            <DatePicker fx:id="datePicker" layoutX="474.0" layoutY="58.0" prefHeight="25.0" prefWidth="132.0" />
+            <Label fx:id="remainingLB" layoutX="239.0" layoutY="19.0" text="Remaining : 0.00 Minute" textFill="WHITE" />
+            <RadioButton layoutX="130.0" layoutY="95.0" mnemonicParsing="false" selected="true" text="Present List" textFill="WHITE" />
+            <RadioButton layoutX="223.0" layoutY="94.0" mnemonicParsing="false" text="Absent List" textFill="WHITE" />
+            <Button layoutX="478.0" layoutY="90.0" mnemonicParsing="false" onAction="#startTimer" prefHeight="25.0" prefWidth="128.0" text="Start Timer" />
+            <Label fx:id="totalPresentLB" layoutX="324.0" layoutY="94.0" text="Present  : 40" textFill="WHITE" />
+            <Label fx:id="totalAbsentLB" layoutX="404.0" layoutY="94.0" text="Absent : 20" textFill="WHITE" />
+            </children>
+        </Pane>
+
+                    <Pane layoutX="14.0" layoutY="120.0" prefHeight="377.0" prefWidth="603.0">
+            <children>
+            <ListView fx:id="listView" layoutX="9.0" layoutY="11.0" prefHeight="356.0" prefWidth="585.0" />
+            </children>
+        </Pane>
+        <Pane layoutX="225.0" layoutY="179.0" prefHeight="183.0" prefWidth="195.0">
+            <ProgressIndicator fx:id="progressbar" layoutX="72.0" layoutY="58.0" />
+        </Pane>
+    </children>
+</AnchorPane>

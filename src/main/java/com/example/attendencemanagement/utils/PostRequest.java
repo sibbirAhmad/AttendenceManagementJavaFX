@@ -1,13 +1,9 @@
 package com.example.attendencemanagement.utils;
-
 import javafx.concurrent.Task;
-
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-
-
 public class PostRequest extends Task<Void> {
     String serverUrl ;
     PostRequestListener listener;
@@ -18,7 +14,7 @@ public class PostRequest extends Task<Void> {
         this.jsonData = jsonAsString;
         this.listener = listener;
         this.serverUrl =
-        "https://script.google.com/macros/s/AKfycbyIWqm7R9LOiCjQwFv70Gi5wSTNK3uSclSfuWpP9rzIfX7KFjG1DIlpZUCtadZnaEH0sA/exec"
+        "https://script.google.com/macros/s/AKfycbzc8_MUgkWsbqHvhMCAnVkxpky-mJvrYU1Jb2vHOol4PZapYU-2xdOyUyFR3dS1tlwIpw/exec"
         ;
 
         Thread thread = new Thread(this,"Post Request");

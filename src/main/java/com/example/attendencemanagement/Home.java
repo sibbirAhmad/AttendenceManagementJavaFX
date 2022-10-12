@@ -94,7 +94,7 @@ public class Home implements Initializable {
         if (responseCode==200){
             System.out.println("Object "+o.get("data"));
             r = o.get("data").getAsString();
-            JsonArray jsonObject = new JsonParser().parse(r).getAsJsonArray();
+            JsonArray jsonObject = new JsonParser().parse(r).getAsJsonArray ();
             String today = selectedDate;
             //Utils.saveAsText("jsonData.txt",jsonData);
             int c = 0;
@@ -118,17 +118,15 @@ public class Home implements Initializable {
                             if (present==1){
                                 p++;
                             }
-
                         }
-
                         presentMap.put(key,present);
-                       // System.out.println(key+" --> "+present);
+                       // System .out.println(key+" --> "+present);
                         c++;
                     }
                 }
 
                 model.setPresentMap(presentMap);
-                model.setTotalPresent(p);
+                model.setTotalPresent(p)  ;
                 model.setTotalDays(c);
                 list.add(model);
             }
@@ -166,6 +164,7 @@ public class Home implements Initializable {
                         if (alert.getResult() == ButtonType.OK) {
 
                         }
+
                     }
                 });
             }
@@ -186,9 +185,6 @@ public class Home implements Initializable {
         comboSetup();
         studentDataArrayList = processData();
         initStudents(studentDataArrayList);
-
-
-
     }
 
     //#region : Init Student List

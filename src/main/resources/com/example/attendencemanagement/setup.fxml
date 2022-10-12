@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="620.0" style="-fx-background-color: #131022" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attendencemanagement.Setup">
+   <children>
+      <Pane layoutY="7.0" prefHeight="140.0" prefWidth="620.0">
+         <children>
+            <TextField fx:id="batchLB" layoutX="299.0" layoutY="75.0" prefHeight="25.0" prefWidth="75.0" promptText="Batch" />
+            <TextField fx:id="subjectCodeLB" layoutX="381.0" layoutY="75.0" prefHeight="25.0" prefWidth="118.0" promptText="Subject Code" />
+            <ComboBox fx:id="departmentCM" layoutX="20.0" layoutY="74.0" prefHeight="25.0" prefWidth="106.0" promptText="Department" />
+            <ComboBox fx:id="sessionCM" layoutX="132.0" layoutY="74.0" prefHeight="25.0" prefWidth="86.0" promptText="Session" />
+            <ComboBox fx:id="yearCM" layoutX="225.0" layoutY="75.0" prefHeight="25.0" prefWidth="67.0" promptText="Year" />
+            <Button onAction="#onCreate" layoutX="505.0" layoutY="74.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="96.0" text="Create" />
+            <Label layoutX="18.0" layoutY="27.0" prefHeight="25.0" prefWidth="132.0" text="Create Subject" textFill="#ebe7e7">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="510.0" layoutY="15.0" mnemonicParsing="false" onAction="#backToHome" prefHeight="25.0" prefWidth="96.0" text="Bask to home" />
+         </children>
+      </Pane>
+
+      <Pane layoutX="14.0" layoutY="120.0" prefHeight="377.0" prefWidth="603.0">
+         <children>
+            <TextArea layoutX="13.0" layoutY="14.0" prefHeight="290.0" prefWidth="566.0" promptText="Ex : ID &lt;tab&gt; Name" />
+            <Button layoutX="13.0" layoutY="328.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="577.0" text="Update to Sheet" />
+         </children>
+      </Pane>
+      <Pane layoutX="225.0" layoutY="179.0" prefHeight="183.0" prefWidth="195.0">
+         <ProgressIndicator fx:id="progressbar" layoutX="72.0" layoutY="58.0" />
+      </Pane>
+   </children>
+</AnchorPane>
