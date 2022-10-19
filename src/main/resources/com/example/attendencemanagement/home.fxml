@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <AnchorPane prefHeight="500.0" prefWidth="620.0" style="-fx-background-color: #131022;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attendencemanagement.Home">
    <children>
       <Pane prefHeight="87.0" prefWidth="620.0" style="-fx-background-color: #131022; -fx-background-radius: 5;">

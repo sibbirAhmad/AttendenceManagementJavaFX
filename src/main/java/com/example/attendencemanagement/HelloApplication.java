@@ -12,6 +12,7 @@ public class HelloApplication extends Application {
     //define your offsets here
     private double xOffset = 0;
     private double yOffset = 0;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("test.fxml"));

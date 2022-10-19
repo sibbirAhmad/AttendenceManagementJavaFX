@@ -63,9 +63,14 @@
 
 .combo-box
 {
-    -fx-background-color : #141124;
-    -fx-border-color:  #515658;
+    /*-fx-background-color : #141124;*/
+    -fx-background-color : #ffffff;
+    /*-fx-border-color:  #515658;*/
     -fx-border-radius: 30;
+    -fx-text-fill: red;
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: WHITE;
+
 }
 .combo-box:hover
 {
@@ -79,7 +84,10 @@
     -fx-border-color:  #FFFF;
     -fx-border-radius: 30;
 }
-
+.combo-box .label {
+    -fx-background-color:  WHITE;
+    -fx-text-fill: RED;
+}
 .table-view .column-header,
 .table-view .column-header-background .filler {
     -fx-cell-size : 20;

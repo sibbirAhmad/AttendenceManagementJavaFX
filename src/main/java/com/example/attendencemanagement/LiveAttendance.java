@@ -80,7 +80,8 @@ public class LiveAttendance implements Initializable {
                     progressbar.setVisible(false);
                     durationInMillis = System.currentTimeMillis()+(duration*(1000*60));
                     myTimerMethod();//Todo : Start Timer
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION,"Successfully timer started",ButtonType.OK);
+                    String Link  = "https://sibbirahmad.github.io/attendance.html";
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION,"Successfully timer started\nAttendance URL : "+Link,ButtonType.OK);
                     alert.showAndWait();
                 });
             }
@@ -237,6 +238,5 @@ public class LiveAttendance implements Initializable {
                 //progressbar.setVisible(false);
             }
         });
-
     }
 }

@@ -16,8 +16,7 @@ public class PostRequest extends Task<Void> {
         this.serverUrl =
                 "https://script.google.com/macros/s/AKfycbymxi6suZv0zOLw0ZC0QWBV6KdGjTZR9OMsYa4YyfUkSR91tdRyYcRj0BkLZefkjD7e_w/exec";
 
-
-        Thread thread = new Thread(this,"Post Request");
+       Thread thread = new Thread(this,"Post Request");
        thread.setDaemon(true);
        thread.start();
     }
